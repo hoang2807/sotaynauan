@@ -25,12 +25,12 @@ public class monanController {
     private JTextArea jtaNguyenLieu;
     private JTextArea jtaCachLam;
     private JTextField jtfLoai;
-    private JLabel jlbSMG;
+    private JLabel jlbMSG;
 
     private MonAn monan = null;
     private MonAnService monanService = null;
 
-    public monanController(JButton btnSubmit, JButton btnEdit, JButton btnDelete, JTextField jtfTenMon, JTextArea jtaNguyenLieu, JTextArea jtaCachLam, JTextField jtfLoai, JLabel jlbSMG) {
+    public monanController(JButton btnSubmit, JButton btnEdit, JButton btnDelete, JTextField jtfTenMon, JTextArea jtaNguyenLieu, JTextArea jtaCachLam, JTextField jtfLoai, JLabel jlbMSG) {
         this.btnSubmit = btnSubmit;
         this.btnEdit=btnEdit;
         this.btnDelete=btnDelete;
@@ -38,7 +38,7 @@ public class monanController {
         this.jtaNguyenLieu = jtaNguyenLieu;
         this.jtaCachLam = jtaCachLam;
         this.jtfLoai = jtfLoai;
-        this.jlbSMG = jlbSMG;
+        this.jlbMSG = jlbMSG;
 
         this.monanService = new MonAnServiceImpl();
     }
@@ -56,7 +56,7 @@ public class monanController {
             @Override
             public void mouseClicked(MouseEvent e) {
                 if (jtfTenMon.getText().length() == 0) {
-                    jlbSMG.setText("Nhap ten mon la bat buoc");
+                    jlbMSG.setText("Nhap ten mon la bat buoc");
                 } else {
                     monan.setTenmon(jtfTenMon.getText());
                     monan.setNguyenLieu(jtaNguyenLieu.getText());
@@ -66,9 +66,9 @@ public class monanController {
                         int result = monanService.createOrUpdate(monan);
                         if (result != 0) {
                             monan.setIDmon(result);
-                            jlbSMG.setText("Xử lý cập nhật dữ liệu thành công!");
+                            jlbMSG.setText("Xử lý cập nhật dữ liệu thành công!");
                         } else {
-                            jlbSMG.setText("Có lỗi xảy ra, vui lòng thử lại!");
+                            jlbMSG.setText("Có lỗi xảy ra, vui lòng thử lại!");
                         }
                     }
                 }

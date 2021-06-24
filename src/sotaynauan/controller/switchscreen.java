@@ -11,8 +11,8 @@ import javax.swing.JLabel;
 import sotaynauan.bean.DanhMucBean;
 import sotaynauan.view.QuanLyMonAn;
 import sotaynauan.view.QuanLyNguyenLieu;
-import sotaynauan.view.TaiKhoan;
-import sotaynauan.view.ThucDon;
+import sotaynauan.view.QuanLyTaiKhoan;
+import sotaynauan.view.ThucDonForm;
 
 /**
  *
@@ -67,10 +67,10 @@ public class switchscreen {
                     node=new QuanLyNguyenLieu();
                     break;
                 case "ThucDon":
-                    node= new ThucDon();
+                    node= new ThucDonForm();
                     break;
                 case "TaiKhoan":
-                    node =new TaiKhoan();
+                    node =new QuanLyTaiKhoan();
                     break;
                 default:
                     break;

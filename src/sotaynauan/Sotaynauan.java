@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package sotaynauan;
+
+import sotaynauan.view.LoginJDialog;
 import sotaynauan.view.Main;
 /**
  *
@@ -15,7 +17,13 @@ public class Sotaynauan {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        new Main().setVisible(true);
+//        new Main().setVisible(true);
+        LoginJDialog login=new LoginJDialog(null,true);
+        login.setTitle("Dang nhap");
+        login.setResizable(false);
+        login.setLocationRelativeTo(null);
+        login.setVisible(true);
+        
     }
     
 }

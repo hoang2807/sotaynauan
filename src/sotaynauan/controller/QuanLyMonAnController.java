@@ -21,7 +21,7 @@ import javax.swing.text.TableView;
 import sotaynauan.model.MonAn;
 import sotaynauan.service.MonAnService;
 import sotaynauan.service.MonAnServiceImpl;
-import sotaynauan.utility.ClassTableModel;
+import sotaynauan.utility.ClassTableModelMonAn;
 import sotaynauan.view.MonAnJFrame;
 import sotaynauan.model.MonAn;
 /**
@@ -48,7 +48,7 @@ public class QuanLyMonAnController {
 
     public void setDateToTable() {
         List<MonAn> listItem = monanService.getList();
-        DefaultTableModel model = new ClassTableModel().setTableMonAn(listItem, listColumn);
+        DefaultTableModel model = new ClassTableModelMonAn().setTableMonAn(listItem, listColumn);
         JTable table = new JTable(model);
 
         rowSorter = new TableRowSorter<>(table.getModel());
@@ -74,7 +74,7 @@ public class QuanLyMonAnController {
                     rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text));
                 }
             }
-
+            @Override
             public void changedUpdate(DocumentEvent e) {
 
             }

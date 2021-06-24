@@ -9,12 +9,12 @@ package sotaynauan.view;
  *
  * @author hoang
  */
-public class TaiKhoan extends javax.swing.JPanel {
+public class ThucDonForm extends javax.swing.JPanel {
 
     /**
-     * Creates new form TaiKhoan
+     * Creates new form ThucDon
      */
-    public TaiKhoan() {
+    public ThucDonForm() {
         initComponents();
     }
 

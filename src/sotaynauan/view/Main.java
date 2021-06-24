@@ -84,6 +84,7 @@ public class Main extends javax.swing.JFrame {
 
         jpnQuanLyMonAn.setBackground(new java.awt.Color(153, 0, 204));
 
+        jblQuanLyMonAn.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         jblQuanLyMonAn.setText("Quan ly mon an");
 
         javax.swing.GroupLayout jpnQuanLyMonAnLayout = new javax.swing.GroupLayout(jpnQuanLyMonAn);
@@ -91,20 +92,21 @@ public class Main extends javax.swing.JFrame {
         jpnQuanLyMonAnLayout.setHorizontalGroup(
             jpnQuanLyMonAnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnQuanLyMonAnLayout.createSequentialGroup()
-                .addGap(90, 90, 90)
+                .addGap(42, 42, 42)
                 .addComponent(jblQuanLyMonAn)
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         jpnQuanLyMonAnLayout.setVerticalGroup(
             jpnQuanLyMonAnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnQuanLyMonAnLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(26, Short.MAX_VALUE)
                 .addComponent(jblQuanLyMonAn)
-                .addGap(38, 38, 38))
+                .addGap(24, 24, 24))
         );
 
         jpnQuanLyNguyenLieu.setBackground(new java.awt.Color(153, 0, 204));
 
+        jblQuanLyNguyenLieu.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         jblQuanLyNguyenLieu.setText("Quan ly nguyen lieu");
 
         javax.swing.GroupLayout jpnQuanLyNguyenLieuLayout = new javax.swing.GroupLayout(jpnQuanLyNguyenLieu);
@@ -112,9 +114,9 @@ public class Main extends javax.swing.JFrame {
         jpnQuanLyNguyenLieuLayout.setHorizontalGroup(
             jpnQuanLyNguyenLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnQuanLyNguyenLieuLayout.createSequentialGroup()
-                .addGap(51, 51, 51)
+                .addGap(30, 30, 30)
                 .addComponent(jblQuanLyNguyenLieu)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         jpnQuanLyNguyenLieuLayout.setVerticalGroup(
             jpnQuanLyNguyenLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,6 +128,7 @@ public class Main extends javax.swing.JFrame {
 
         jpnThucDon.setBackground(new java.awt.Color(153, 0, 204));
 
+        jblThucDon.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         jblThucDon.setText("Thuc don");
 
         javax.swing.GroupLayout jpnThucDonLayout = new javax.swing.GroupLayout(jpnThucDon);
@@ -133,37 +136,38 @@ public class Main extends javax.swing.JFrame {
         jpnThucDonLayout.setHorizontalGroup(
             jpnThucDonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnThucDonLayout.createSequentialGroup()
-                .addGap(79, 79, 79)
+                .addGap(69, 69, 69)
                 .addComponent(jblThucDon)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpnThucDonLayout.setVerticalGroup(
             jpnThucDonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnThucDonLayout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+                .addContainerGap(27, Short.MAX_VALUE)
                 .addComponent(jblThucDon)
-                .addGap(22, 22, 22))
+                .addGap(21, 21, 21))
         );
 
         jpnTaiKhoan.setBackground(new java.awt.Color(153, 0, 204));
 
+        jblTaiKhoan.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         jblTaiKhoan.setText("Tai khoan");
 
         javax.swing.GroupLayout jpnTaiKhoanLayout = new javax.swing.GroupLayout(jpnTaiKhoan);
         jpnTaiKhoan.setLayout(jpnTaiKhoanLayout);
         jpnTaiKhoanLayout.setHorizontalGroup(
             jpnTaiKhoanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnTaiKhoanLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jpnTaiKhoanLayout.createSequentialGroup()
+                .addGap(65, 65, 65)
                 .addComponent(jblTaiKhoan)
-                .addGap(97, 97, 97))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpnTaiKhoanLayout.setVerticalGroup(
             jpnTaiKhoanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnTaiKhoanLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addGap(24, 24, 24)
                 .addComponent(jblTaiKhoan)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jpnMenuLayout = new javax.swing.GroupLayout(jpnMenu);
@@ -195,14 +199,14 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jpnThucDon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
                 .addComponent(jpnTaiKhoan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 160, Short.MAX_VALUE))
+                .addGap(0, 154, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jpnViewLayout = new javax.swing.GroupLayout(jpnView);
         jpnView.setLayout(jpnViewLayout);
         jpnViewLayout.setHorizontalGroup(
             jpnViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1254, Short.MAX_VALUE)
+            .addGap(0, 1287, Short.MAX_VALUE)
         );
         jpnViewLayout.setVerticalGroup(
             jpnViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

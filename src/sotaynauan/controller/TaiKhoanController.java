@@ -42,7 +42,7 @@ public class TaiKhoanController {
             @Override
             public void mouseClicked(MouseEvent e) {
                 if (jtfusername.getText().length() == 0 || jtfpassword.getText().length() == 0) {
-                    jblMsg.setText("Nhap ten mon la bat buoc");
+                    jblMsg.setText("Nhap ten la bat buoc");
                 } else {
                     TaiKhoan taikhoan = taikhoanService.Login(jtfusername.getText(), jtfpassword.getText());
                     if(taikhoan==null){

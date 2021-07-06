@@ -21,7 +21,7 @@ public class MonAnDAOImpl implements MonAnDAO{
     public List<MonAn> getList() {
         try {
         Connection con=DB.getConnection();
-        String sql="select Tenmon,Cachlam,NguyenLieu,Loai from monan";
+        String sql="select Tenmon,Cachlam,Loai from monan";
         List<MonAn> list=new ArrayList<>();
         PreparedStatement ps = con.prepareCall(sql);
         ResultSet rs=ps.executeQuery();
@@ -30,7 +30,6 @@ public class MonAnDAOImpl implements MonAnDAO{
             //monan.setIDmon(rs.getInt("IDmon"));
             monan.setTenmon(rs.getNString("Tenmon"));
             monan.setCachlam(rs.getNString("Cachlam"));
-            monan.setNguyenLieu(rs.getNString("NguyenLieu"));
             monan.setLoai(rs.getNString("Loai"));
             list.add(monan);
         }
@@ -48,13 +47,12 @@ public class MonAnDAOImpl implements MonAnDAO{
     public int createOrUpdate(MonAn monan) {
         try {
             Connection cons = DB.getConnection();
-            String sql = "INSERT INTO monan(TenMon, NguyenLieu, CachLam, Loai) VALUES(?, ?, ?, ?)";
+            String sql = "INSERT INTO monan(TenMon, CachLam, Loai) VALUES(?, ?, ?)";
             PreparedStatement ps = cons.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
 
             ps.setString(1, monan.getTenmon());
-            ps.setString(2,monan.getNguyenLieu());
-            ps.setString(3,monan.getCachlam());
-            ps.setString(4, monan.getLoai());
+            ps.setString(2,monan.getCachlam());
+            ps.setString(3, monan.getLoai());
             ps.execute();
             ResultSet rs = ps.getGeneratedKeys();
             int generatedKey = 0;
@@ -75,13 +73,12 @@ public class MonAnDAOImpl implements MonAnDAO{
     public int Edit(MonAn monan) {
         try {
             Connection cons = DB.getConnection();
-            String sql = "Update monan set NguyenLieu=?,CachLam=?,Loai=? where TenMon=?";
+            String sql = "Update monan set CachLam=?,Loai=? where TenMon=?";
             PreparedStatement ps = cons.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
 
-            ps.setString(1, monan.getNguyenLieu());
-            ps.setString(2,monan.getCachlam());
-            ps.setString(3, monan.getLoai());
-            ps.setString(4,monan.getTenmon());
+            ps.setString(1,monan.getCachlam());
+            ps.setString(2, monan.getLoai());
+            ps.setString(3,monan.getTenmon());
             ps.execute();
             ResultSet rs = ps.getGeneratedKeys();
             int generatedKey = 0;

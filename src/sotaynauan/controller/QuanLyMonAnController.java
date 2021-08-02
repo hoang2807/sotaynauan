@@ -35,7 +35,7 @@ public class QuanLyMonAnController {
     private JTextField jtfSearch;
 
     private MonAnService monanService = null;
-    private String[] listColumn = {"STT", "Ten mon", "Nguyen lieu", "Cach lam", "Loai"};
+    private String[] listColumn = {"STT", "Ten mon", "Cach lam", "Loai"};
     private TableRowSorter<TableModel> rowSorter = null;
 
     public QuanLyMonAnController(JPanel jpnView, JButton btnAdd, JTextField jtfSearch) {
@@ -85,8 +85,8 @@ public class QuanLyMonAnController {
         table.getColumnModel().getColumn(0).setMinWidth(150);
         table.getColumnModel().getColumn(1).setMaxWidth(300);
         table.getColumnModel().getColumn(1).setMinWidth(300);
-        table.getColumnModel().getColumn(2).setMaxWidth(500);
-        table.getColumnModel().getColumn(2).setMinWidth(500);
+        table.getColumnModel().getColumn(2).setMaxWidth(800);
+        table.getColumnModel().getColumn(2).setMinWidth(800);
         table.getTableHeader().setFont(new Font("Ubuntu", Font.BOLD, 14));
         table.getTableHeader().setPreferredSize(new Dimension(100, 50));
         table.setRowHeight(50);
@@ -102,9 +102,9 @@ public class QuanLyMonAnController {
 
                     MonAn monan = new MonAn();
                     monan.setTenmon(model.getValueAt(selectedRowIndex, 1).toString());
-                    monan.setNguyenLieu(model.getValueAt(selectedRowIndex, 2) != null ? model.getValueAt(selectedRowIndex, 2).toString() : "");
-                    monan.setCachlam(model.getValueAt(selectedRowIndex, 3) != null ? model.getValueAt(selectedRowIndex, 3).toString() : "");
-                    monan.setLoai(model.getValueAt(selectedRowIndex, 4) != null ? model.getValueAt(selectedRowIndex, 4).toString() : "");
+//                    monan.setNguyenLieu(model.getValueAt(selectedRowIndex, 2) != null ? model.getValueAt(selectedRowIndex, 2).toString() : "");
+                    monan.setCachlam(model.getValueAt(selectedRowIndex, 2) != null ? model.getValueAt(selectedRowIndex, 2).toString() : "");
+                    monan.setLoai(model.getValueAt(selectedRowIndex, 3) != null ? model.getValueAt(selectedRowIndex, 3).toString() : "");
                     MonAnJFrame frame = new MonAnJFrame(monan);
                     frame.setTitle("Thong tin mon an");;
                     frame.setResizable(false);

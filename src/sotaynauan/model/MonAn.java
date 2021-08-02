@@ -10,10 +10,9 @@ public class MonAn {
 
     private String Tenmon;
     private String Cachlam;
-    private String NguyenLieu;
+
     private String Loai;
 
-    
     @Override
     public String toString() {
         return Tenmon + ", cachlam=" + Cachlam;
@@ -31,10 +30,6 @@ public class MonAn {
         this.Cachlam = Cachlam;
     }
 
-    public void setNguyenLieu(String NguyenLieu) {
-        this.NguyenLieu = NguyenLieu;
-    }
-
     public void setLoai(String Loai) {
         this.Loai = Loai;
     }
@@ -49,10 +44,6 @@ public class MonAn {
 
     public String getCachlam() {
         return Cachlam;
-    }
-
-    public String getNguyenLieu() {
-        return NguyenLieu;
     }
 
     public String getLoai() {

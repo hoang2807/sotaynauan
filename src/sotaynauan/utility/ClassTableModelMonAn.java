@@ -33,9 +33,9 @@ public class ClassTableModelMonAn {
                 //obj[0]=monan.getIDmon();
                 obj[0]=(i+1);
                 obj[1]=monan.getTenmon();
-                obj[2]=monan.getNguyenLieu();
-                obj[3]=monan.getCachlam();
-                obj[4]=monan.getLoai();
+//                obj[2]=monan.getNguyenLieu();
+                obj[2]=monan.getCachlam();
+                obj[3]=monan.getLoai();
                 dtm.addRow(obj);
             }
         }

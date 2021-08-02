@@ -6,8 +6,10 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import sotaynauan.dao.register;
 import sotaynauan.model.TaiKhoan;
 import sotaynauan.service.TaiKhoanService;
 import sotaynauan.service.TaiKhoanServiceImpl;
@@ -21,19 +23,20 @@ public class TaiKhoanController {
 
     private JDialog dialog;
     private JButton btnSubmit;
+    private JButton btnRegister;
     private JTextField jtfusername;
     private JPasswordField jtfpassword;
     private JLabel jblMsg;
 
     private TaiKhoanService taikhoanService = null;
 
-    public TaiKhoanController(JDialog dialog, JButton btnSubmit, JTextField jtfusername, JPasswordField jtfpassword, JLabel jblMsg) {
+    public TaiKhoanController(JDialog dialog, JButton btnSubmit, JTextField jtfusername, JPasswordField jtfpassword, JLabel jblMsg,JButton btnRegister) {
         this.dialog = dialog;
         this.btnSubmit = btnSubmit;
         this.jtfusername = jtfusername;
         this.jtfpassword = (JPasswordField) jtfpassword;
         this.jblMsg = jblMsg;
-
+        this.btnRegister=btnRegister;
         taikhoanService = new TaiKhoanServiceImpl();
     }
 
@@ -57,6 +60,20 @@ public class TaiKhoanController {
                 }
             }
 
+        });
+        
+        btnRegister.addMouseListener(new MouseAdapter(){
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if (jtfusername.getText().length() == 0 || jtfpassword.getText().length() == 0) {
+                    jblMsg.setText("Nhap ten la bat buoc");
+                } else {
+                    String username=jtfusername.getText();
+                    String password=jtfpassword.getText();
+                    register.create(username, password);
+                    JOptionPane.showMessageDialog(btnRegister, "Tao thanh cong");
+                }
+            }
         });
     }
 }

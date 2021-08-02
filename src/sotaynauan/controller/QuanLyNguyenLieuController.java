@@ -23,7 +23,6 @@ import sotaynauan.service.NguyenLieuServiceImpl;
 import sotaynauan.utility.ClassTableModelNguyenLieu;
 import javax.swing.table.TableRowSorter;
 import sotaynauan.model.MonAn;
-import sotaynauan.view.MonAnJFrame;
 import sotaynauan.view.NguyenLieuJFrame;
 /**
  *
@@ -122,7 +121,7 @@ public class QuanLyNguyenLieuController {
         btnAdd.addMouseListener(new MouseAdapter(){
             @Override
             public void mouseClicked(MouseEvent e) {
-                MonAnJFrame frame=new MonAnJFrame(new MonAn());
+                NguyenLieuJFrame frame=new NguyenLieuJFrame(new NguyenLieu());
                 frame.setTitle("Thong tin mon an");
                 frame.setLocationRelativeTo(null);
                 frame.setResizable(false);

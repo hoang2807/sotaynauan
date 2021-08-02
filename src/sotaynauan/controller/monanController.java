@@ -30,7 +30,7 @@ public class monanController {
     private MonAn monan = null;
     private MonAnService monanService = null;
 
-    public monanController(JButton btnSubmit, JButton btnEdit, JButton btnDelete, JTextField jtfTenMon, JTextArea jtaNguyenLieu, JTextArea jtaCachLam, JTextField jtfLoai, JLabel jlbMSG) {
+    public monanController(JButton btnSubmit, JButton btnEdit, JButton btnDelete, JTextField jtfTenMon, JTextArea jtaCachLam, JTextField jtfLoai, JLabel jlbMSG) {
         this.btnSubmit = btnSubmit;
         this.btnEdit=btnEdit;
         this.btnDelete=btnDelete;
@@ -43,10 +43,14 @@ public class monanController {
         this.monanService = new MonAnServiceImpl();
     }
 
+//    public monanController(JButton btnSubmit, JButton btnEdit, JButton btnDelete, JTextField jtfTenMon, JTextArea jtaCachLam, JTextField jtfLoai, JLabel jlbSMG) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+
     public void setView(MonAn monan) {
         this.monan = monan;
         jtfTenMon.setText(monan.getTenmon());
-        jtaNguyenLieu.setText(monan.getNguyenLieu());
+//        jtaNguyenLieu.setText(monan.getNguyenLieu());
         jtaCachLam.setText(monan.getCachlam());
         jtfLoai.setText(monan.getLoai());
     }
@@ -59,7 +63,7 @@ public class monanController {
                     jlbMSG.setText("Nhap ten mon la bat buoc");
                 } else {
                     monan.setTenmon(jtfTenMon.getText());
-                    monan.setNguyenLieu(jtaNguyenLieu.getText());
+//                    monan.setNguyenLieu(jtaNguyenLieu.getText());
                     monan.setCachlam(jtaCachLam.getText());
                     monan.setLoai(jtfLoai.getText());
                     if (showDialog()) {
@@ -78,7 +82,7 @@ public class monanController {
             @Override
             public void mouseClicked(MouseEvent e) {
                 monan.setTenmon(jtfTenMon.getText());
-                monan.setNguyenLieu(jtaNguyenLieu.getText());
+//                monan.setNguyenLieu(jtaNguyenLieu.getText());
                 monan.setCachlam(jtaCachLam.getText());
                 monan.setLoai(jtfLoai.getText());
                  if (showDialog()) {

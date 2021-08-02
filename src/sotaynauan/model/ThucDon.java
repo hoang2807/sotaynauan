@@ -1,4 +1,3 @@
-
 package sotaynauan.model;
 
 import java.util.Date;
@@ -8,10 +7,10 @@ import java.util.Date;
  * @author hoang
  */
 public class ThucDon {
+
     private int IDthucdon;
     private String Tenthucdon;
-    private Date Ngaytaothucdon;
-    private String Creator;
+    private String Loai;
 
     public void setIDthucdon(int IDthucdon) {
         this.IDthucdon = IDthucdon;
@@ -21,12 +20,12 @@ public class ThucDon {
         this.Tenthucdon = Tenthucdon;
     }
 
-    public void setNgaytaothucdon(Date Ngaytaothucdon) {
-        this.Ngaytaothucdon = Ngaytaothucdon;
+    public String getLoai() {
+        return Loai;
     }
 
-    public void setCreator(String Creator) {
-        this.Creator = Creator;
+    public void setLoai(String Loai) {
+        this.Loai = Loai;
     }
 
     public int getIDthucdon() {
@@ -37,11 +36,4 @@ public class ThucDon {
         return Tenthucdon;
     }
 
-    public Date getNgaytaothucdon() {
-        return Ngaytaothucdon;
-    }
-
-    public String getCreator() {
-        return Creator;
-    }
 }

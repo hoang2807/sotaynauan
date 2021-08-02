@@ -5,6 +5,8 @@
  */
 package sotaynauan.view;
 
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import sotaynauan.controller.monanController;
 import sotaynauan.model.MonAn;
 
@@ -20,7 +22,7 @@ public class MonAnJFrame extends javax.swing.JFrame {
     public MonAnJFrame(MonAn monan) {
         initComponents();
 
-        monanController controller = new monanController(btnSubmit, btnEdit, btnDelete, jtfTenMon, jtaNguyenLieu, jtaCachLam, jtfLoai, jlbSMG);
+        monanController controller = new monanController(btnSubmit, btnEdit, btnDelete, jtfTenMon, jtaCachLam, jtfLoai, jlbSMG);
         controller.setView(monan);
         controller.setEvent();
     }
@@ -38,18 +40,16 @@ public class MonAnJFrame extends javax.swing.JFrame {
         btnSubmit = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jtfTenMon = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jtaNguyenLieu = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         jtaCachLam = new javax.swing.JTextArea();
         jtfLoai = new javax.swing.JTextField();
         jlbSMG = new javax.swing.JLabel();
         btnEdit = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
+        btncapnhat = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -65,10 +65,6 @@ public class MonAnJFrame extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(15, 15, 15));
         jLabel1.setText("Ten Mon");
 
-        jLabel2.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(23, 16, 16));
-        jLabel2.setText("Nguyen Lieu");
-
         jLabel3.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(23, 16, 16));
         jLabel3.setText("Cach lam");
@@ -78,11 +74,6 @@ public class MonAnJFrame extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(23, 16, 16));
         jLabel4.setText("Loai mon an");
-
-        jtaNguyenLieu.setBackground(new java.awt.Color(254, 242, 242));
-        jtaNguyenLieu.setColumns(20);
-        jtaNguyenLieu.setRows(5);
-        jScrollPane1.setViewportView(jtaNguyenLieu);
 
         jtaCachLam.setBackground(new java.awt.Color(237, 235, 235));
         jtaCachLam.setColumns(20);
@@ -108,7 +99,6 @@ public class MonAnJFrame extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
-                            .addComponent(jLabel2)
                             .addComponent(jLabel4))
                         .addGap(32, 32, 32)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,7 +106,6 @@ public class MonAnJFrame extends javax.swing.JFrame {
                                 .addComponent(jtfTenMon, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(264, 264, 264)
                                 .addComponent(jLabel3))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jtfLoai, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -132,14 +121,10 @@ public class MonAnJFrame extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addComponent(jtfTenMon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3))
-                        .addGap(29, 29, 29)
+                        .addGap(67, 67, 67)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(43, 43, 43)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(jtfLoai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jtfLoai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addComponent(jlbSMG, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -154,6 +139,13 @@ public class MonAnJFrame extends javax.swing.JFrame {
         btnDelete.setMaximumSize(new java.awt.Dimension(35, 30));
         btnDelete.setMinimumSize(new java.awt.Dimension(35, 30));
 
+        btncapnhat.setText("Thanh phan");
+        btncapnhat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncapnhatActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -164,6 +156,8 @@ public class MonAnJFrame extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btncapnhat, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(46, 46, 46)
                 .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -178,7 +172,8 @@ public class MonAnJFrame extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSubmit)
                     .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btncapnhat))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -198,22 +193,35 @@ public class MonAnJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btncapnhatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncapnhatActionPerformed
+        // TODO add your handling code here:
+        btncapnhat.addMouseListener(new MouseAdapter(){
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                NguyenLieuMonAn frame=new NguyenLieuMonAn();
+                frame.setTitle("Nguyen lieu mon an");
+                frame.setLocationRelativeTo(null);
+                frame.setResizable(false);
+                frame.setVisible(true);
+            }
+            
+        });
+    }//GEN-LAST:event_btncapnhatActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnSubmit;
+    private javax.swing.JButton btncapnhat;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel jlbSMG;
     private javax.swing.JTextArea jtaCachLam;
-    private javax.swing.JTextArea jtaNguyenLieu;
     private javax.swing.JTextField jtfLoai;
     private javax.swing.JTextField jtfTenMon;
     // End of variables declaration//GEN-END:variables

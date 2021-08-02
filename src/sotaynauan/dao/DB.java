@@ -19,9 +19,5 @@ public class DB {
         }
         return null;
     }
-    public static void main(String[] args) throws SQLException{
-        Connection c=getConnection();
-        System.err.println(c.toString());
-        c.close();
-    }
+    
 }
